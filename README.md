@@ -1,8 +1,10 @@
-# Silverback Fitness — website prototype
+# Silverback Fitness — website
 
-Client prototype for **Silverback Fitness**: Ali's private, one-on-one personal training studio focused on lower back and knee pain (Instagram [@aliisilverrback](https://www.instagram.com/aliisilverrback/)).
+Website for **Silverback Fitness**, a private, one-on-one personal training studio focused on lower back and knee pain (Instagram [@aliisilverrback](https://www.instagram.com/aliisilverrback/)).
 
-Live preview: https://jdix22.github.io/silverback-fitness/
+Live: https://alisilverback.ca/ (Cloudflare Worker "silverback-fitness"). The GitHub Pages copy at https://jdix22.github.io/silverback-fitness/ points its canonical at the .ca.
+
+**Voice rule (owner's request):** never name the trainer anywhere on the site. All copy speaks as "we" / "us".
 
 Everything on the page comes from his Instagram bio, his post captions and the contact details Jordan supplied. Nothing is invented: there are no made-up reviews, prices, credentials or years in business.
 
@@ -12,7 +14,7 @@ Everything on the page comes from his Instagram bio, his post captions and the c
 - **Where does it hurt?**: tabs for lower back, knees, or "just want to lift right". A silver spine and knee diagram lights up the chosen area. Each tab's book link pre-selects that area in the form.
 - **The Silverback method**: Assess, Rebuild, Load, Lead.
 - **Why "Silverback"?**: the gorilla idea, kept short: the silverback leads and protects the troop, and the silver is earned.
-- **About Ali**: his "quit my day job and opened my own gym at 25" story, linked to his reel.
+- **About us**: the "quit a day job and opened the studio at 25" story, linked to the reel.
 - **Results**: links to his Client Results and Testimonials highlights, plus the Bulldog Nutrition code SILVERBACK.
 - **FAQ**, **Instagram feed** (8 posts), **contact form**, footer.
 - Silverback touches throughout: a vertebrae scroll rail on wide screens that lights up silver as you scroll, "Join the troop on Instagram", "the silver is earned."
@@ -31,9 +33,9 @@ If the feed ever fails to load, the saved posts stay on the page.
 
 The form opens the visitor's email app with the message filled in, addressed to shahinalii@yahoo.com. To have it send directly, put a form service URL (Formspree, Web3Forms or a Worker) into `FORM_ENDPOINT` in `assets/js/site.js`.
 
-## Questions for Ali before launch
+## Open questions for the owner
 
-1. **Name**: is "Ali" how he wants to appear? (The email suggests Shahin Ali.) Any surname or nickname?
+1. **Name**: settled. No personal name on the site; "we" / "us" throughout.
 2. **Studio location**: the city or address. The site says "Greater Toronto Area" and "address sent when you book" for now. A real city helps Google and AI search a lot.
 3. **Credentials**: any personal training certifications (CSEP, NASM, CanFitPro, kinesiology degree)? They'd go in the About section and the structured data.
 4. **Prices and packages**: single sessions, packs, online coaching? Is there a free first consult?
@@ -42,15 +44,14 @@ The form opens the visitor's email app with the message filled in, addressed to 
 7. **Client results and testimonials**: permission to put 3–4 of them (with first names and photos) directly on the site. This is the biggest trust boost available.
 8. **Mission line**: his bio says "without the use of modern medicine". The site quotes only "To inspire a generation of lifters" to stay clear of health-claim trouble. Is that OK?
 9. **Booking**: does he use a booking app (Calendly, Square, Mindbody)? It can be embedded.
-10. **Domain**: e.g. silverbackfitness.ca, if he wants one.
+10. **Domain**: settled, alisilverback.ca.
 11. **Photos**: a few clean photos of the studio and of him coaching (no text on them) would replace the reel stills.
 
-## Launch checklist
+## Launch (done 2026-11-07)
 
-- Remove `<meta name="robots" content="noindex">` from `index.html` (keep it on `404.html`).
-- Point canonical, og:url, og:image, JSON-LD URLs, `robots.txt` and `sitemap.xml` at the real domain.
-- Add the studio address and hours to the page and the JSON-LD once he confirms them.
-- Ali sets up a Google Business Profile with the same name, phone and category ("Personal trainer").
+- noindex removed (kept on `404.html`); canonical, og, JSON-LD, `robots.txt` and `sitemap.xml` point at https://alisilverback.ca/.
+- Still to do once confirmed: studio address and hours on the page and in the JSON-LD; the owner sets up a Google Business Profile with the same name, phone and category ("Personal trainer").
+- Redeploy after any change: `wrangler deploy` in this folder (git push only updates the GitHub Pages copy). Bump `?v=` on the CSS/JS links each time.
 
 ## Files
 

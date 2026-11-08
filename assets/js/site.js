@@ -3,9 +3,10 @@
  * FACTS (keep page text and JSON-LD in step with these):
  *   Business: Silverback Fitness, private one-on-one personal training studio
  *   Focus: rehab training for lower back and knee pain; form and technique
- *   Trainer: Ali (Instagram @aliisilverrback, "SilverBack - Back & Knee Rehab Specialist")
+ *   Voice: always "we" / "us". Never name the trainer anywhere on the site (owner's request).
+ *   Instagram: @aliisilverrback
  *   Phone: 647-893-1442   Email: shahinalii@yahoo.com
- *   Area: Greater Toronto Area (exact studio address: to confirm with Ali)
+ *   Area: Greater Toronto Area (exact studio address: to confirm with the owner)
  *   Partner: Bulldog Nutrition, code SILVERBACK
  */
 
@@ -105,7 +106,7 @@ if (form) form.addEventListener('submit', async e => {
       const r = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
       if (!r.ok) throw 0;
       form.reset();
-      return say('Sent. Ali will be in touch soon.', 'ok');
+      return say('Sent. We’ll be in touch soon.', 'ok');
     } catch (_) { return say(`Sending failed. Please call or text ${CONTACT_PHONE} or email ${CONTACT_EMAIL}.`, 'bad'); }
   }
   const body = `Name: ${data.name}\nPhone: ${data.phone || '-'}\nEmail: ${data.email}\nArea: ${data.area}\nHow long: ${data.howlong}\n\n${data.message}`;

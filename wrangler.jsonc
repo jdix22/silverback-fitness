@@ -1,0 +1,18 @@
+{
+  "name": "silverback-fitness",
+  "account_id": "76079c3515680b8cf8ee0902bb238ddd",
+  "compatibility_date": "2026-11-01",
+  "main": "worker.js",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "alisilverback.ca", "custom_domain": true },
+    { "pattern": "www.alisilverback.ca", "custom_domain": true }
+  ],
+  "workers_dev": false,
+  "preview_urls": false
+}

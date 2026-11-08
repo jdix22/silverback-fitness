@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jdix22.github.io/silverback-fitness/sitemap.xml
+Sitemap: https://alisilverback.ca/sitemap.xml
